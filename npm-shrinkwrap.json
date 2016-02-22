@@ -1,6 +1,6 @@
 {
   "name": "containership-haproxy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "dependencies": {
     "async": {
       "version": "0.9.0",
@@ -129,50 +129,50 @@
           "from": "diff@1.4.0",
           "resolved": "https://registry.npmjs.org/diff/-/diff-1.4.0.tgz"
         },
-        "glob": {
-          "version": "3.2.3",
-          "from": "glob@3.2.3",
-          "resolved": "https://registry.npmjs.org/glob/-/glob-3.2.3.tgz"
-        },
         "escape-string-regexp": {
           "version": "1.0.2",
           "from": "escape-string-regexp@1.0.2",
           "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.2.tgz"
         },
-        "graceful-fs": {
-          "version": "2.0.3",
-          "from": "graceful-fs@>=2.0.0 <2.1.0",
-          "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-2.0.3.tgz"
+        "glob": {
+          "version": "3.2.3",
+          "from": "glob@3.2.3",
+          "resolved": "https://registry.npmjs.org/glob/-/glob-3.2.3.tgz"
         },
         "growl": {
           "version": "1.8.1",
           "from": "growl@1.8.1",
           "resolved": "https://registry.npmjs.org/growl/-/growl-1.8.1.tgz"
         },
+        "graceful-fs": {
+          "version": "2.0.3",
+          "from": "graceful-fs@>=2.0.0 <2.1.0",
+          "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-2.0.3.tgz"
+        },
         "inherits": {
           "version": "2.0.1",
           "from": "inherits@>=2.0.0 <3.0.0",
           "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz"
-        },
-        "lru-cache": {
-          "version": "2.7.3",
-          "from": "lru-cache@>=2.0.0 <3.0.0",
-          "resolved": "https://registry.npmjs.org/lru-cache/-/lru-cache-2.7.3.tgz"
         },
         "minimatch": {
           "version": "0.2.14",
           "from": "minimatch@>=0.2.11 <0.3.0",
           "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-0.2.14.tgz"
         },
-        "minimist": {
-          "version": "0.0.8",
-          "from": "minimist@0.0.8",
-          "resolved": "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz"
+        "lru-cache": {
+          "version": "2.7.3",
+          "from": "lru-cache@>=2.0.0 <3.0.0",
+          "resolved": "https://registry.npmjs.org/lru-cache/-/lru-cache-2.7.3.tgz"
         },
         "mkdirp": {
           "version": "0.5.1",
           "from": "mkdirp@0.5.1",
           "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz"
+        },
+        "minimist": {
+          "version": "0.0.8",
+          "from": "minimist@0.0.8",
+          "resolved": "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz"
         },
         "ms": {
           "version": "0.7.1",
