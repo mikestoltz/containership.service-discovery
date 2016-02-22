@@ -1,0 +1,27 @@
+build:
+  image: library/node:5.6.0
+  commands:
+    - npm install
+    - npm test
+
+notify:
+  slack:
+    webhook_url: $$SLACK_RELEASES_WEBHOOK
+    channel: releases
+    username: drone
+
+publish:
+  npm:
+    username: "$$NPM_USERNAME"
+    password: "$$NPM_PASSWORD"
+    email: "$$NPM_EMAIL"
+    when:
+      event: tag
+  docker:
+    username: "$$DOCKERHUB_USERNAME"
+    password: "$$DOCKERHUB_PASSWORD"
+    email: "$$DOCKERHUB_EMAIL"
+    repo: containership/containership
+    tag: $$TAG
+    when:
+      event: tag
