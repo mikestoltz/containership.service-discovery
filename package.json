@@ -1,0 +1,18 @@
+{
+  "name": "containership-haproxy",
+  "private": true,
+  "version": "0.0.1",
+  "description": "ContainerShip haproxy application utilized in official service-discovery plugin",
+  "main": "containership-haproxy.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "author": "ContainerShip Developers <developers@containership.io>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "async": "^0.9.0",
+    "lodash": "^3.3.0",
+    "mocha": "^2.4.5",
+    "myriad-kv-client": "^0.1.3"
+  }
+}
