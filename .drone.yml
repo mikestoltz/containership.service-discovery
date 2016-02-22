@@ -15,7 +15,7 @@ publish:
     username: "$$DOCKERHUB_USERNAME"
     password: "$$DOCKERHUB_PASSWORD"
     email: "$$DOCKERHUB_EMAIL"
-    repo: containership/containership
+    repo: containership/haproxy
     tag: $$TAG
     when:
       event: tag
