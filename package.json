@@ -1,7 +1,7 @@
 {
   "name": "containership-haproxy",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ContainerShip haproxy application utilized in official service-discovery plugin",
   "main": "containership-haproxy.js",
   "scripts": {
