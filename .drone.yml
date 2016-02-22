@@ -11,12 +11,6 @@ notify:
     username: drone
 
 publish:
-  npm:
-    username: "$$NPM_USERNAME"
-    password: "$$NPM_PASSWORD"
-    email: "$$NPM_EMAIL"
-    when:
-      event: tag
   docker:
     username: "$$DOCKERHUB_USERNAME"
     password: "$$DOCKERHUB_PASSWORD"
