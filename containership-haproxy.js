@@ -140,7 +140,7 @@ var myriad = {
 
             var containers = [];
 
-            async.each(keys, function(key, fn){
+            async.each(keys || [], function(key, fn){
                 myriad_kv_client.get(key, function(err, container){
                     if(err)
                         return fn(err);
@@ -170,7 +170,7 @@ var myriad = {
 
             var applications = [];
 
-            async.each(keys, function(key, fn){
+            async.each(keys || [], function(key, fn){
                 myriad_kv_client.get(key, function(err, application){
                     if(err)
                         return fn(err);
