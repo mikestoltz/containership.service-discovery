@@ -9,11 +9,18 @@ var template = require([__dirname, "lib", "template"].join("/"));
 
 var config = {};
 
+try{
+    var cs_opts = JSON.parse(process.env.CS_PROC_OPTS);
+}
+catch(err){
+    var cs_opts = {};
+}
+
 var interfaces = os.networkInterfaces();
 var myriad_host;
 
-if(_.has(interfaces, process.env.MYRIAD_INTERFACE)){
-    var iface = _.find(interfaces[process.env.MYRIAD_INTERFACE], function(iface){
+if(_.has(cs_opts, "legiond") && _.has(cs_opts.legiond, "network") && _.has(cs_opts.legiond.network, "interface")){
+    var iface = _.find(interfaces[cs_opts.legiond.network.interface], function(iface){
         return iface.family == "IPv4";
     });
 
