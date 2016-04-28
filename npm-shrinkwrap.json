@@ -1,6 +1,6 @@
 {
   "name": "containership-haproxy",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "dependencies": {
     "async": {
       "version": "0.9.0",
@@ -114,30 +114,30 @@
           "from": "mocha@latest",
           "resolved": "https://registry.npmjs.org/mocha/-/mocha-2.4.5.tgz"
         },
-        "commander": {
-          "version": "2.3.0",
-          "from": "commander@2.3.0",
-          "resolved": "https://registry.npmjs.org/commander/-/commander-2.3.0.tgz"
-        },
         "debug": {
           "version": "2.2.0",
           "from": "debug@2.2.0",
           "resolved": "https://registry.npmjs.org/debug/-/debug-2.2.0.tgz"
+        },
+        "commander": {
+          "version": "2.3.0",
+          "from": "commander@2.3.0",
+          "resolved": "https://registry.npmjs.org/commander/-/commander-2.3.0.tgz"
         },
         "diff": {
           "version": "1.4.0",
           "from": "diff@1.4.0",
           "resolved": "https://registry.npmjs.org/diff/-/diff-1.4.0.tgz"
         },
-        "glob": {
-          "version": "3.2.3",
-          "from": "glob@3.2.3",
-          "resolved": "https://registry.npmjs.org/glob/-/glob-3.2.3.tgz"
-        },
         "escape-string-regexp": {
           "version": "1.0.2",
           "from": "escape-string-regexp@1.0.2",
           "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.2.tgz"
+        },
+        "glob": {
+          "version": "3.2.3",
+          "from": "glob@3.2.3",
+          "resolved": "https://registry.npmjs.org/glob/-/glob-3.2.3.tgz"
         },
         "graceful-fs": {
           "version": "2.0.3",
@@ -159,15 +159,15 @@
           "from": "lru-cache@>=2.0.0 <3.0.0",
           "resolved": "https://registry.npmjs.org/lru-cache/-/lru-cache-2.7.3.tgz"
         },
-        "minimist": {
-          "version": "0.0.8",
-          "from": "minimist@0.0.8",
-          "resolved": "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz"
-        },
         "minimatch": {
           "version": "0.2.14",
           "from": "minimatch@>=0.2.11 <0.3.0",
           "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-0.2.14.tgz"
+        },
+        "minimist": {
+          "version": "0.0.8",
+          "from": "minimist@0.0.8",
+          "resolved": "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz"
         },
         "mkdirp": {
           "version": "0.5.1",
@@ -179,15 +179,15 @@
           "from": "sigmund@>=1.0.0 <1.1.0",
           "resolved": "https://registry.npmjs.org/sigmund/-/sigmund-1.0.1.tgz"
         },
-        "ms": {
-          "version": "0.7.1",
-          "from": "ms@0.7.1",
-          "resolved": "https://registry.npmjs.org/ms/-/ms-0.7.1.tgz"
-        },
         "supports-color": {
           "version": "1.2.0",
           "from": "supports-color@1.2.0",
           "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-1.2.0.tgz"
+        },
+        "ms": {
+          "version": "0.7.1",
+          "from": "ms@0.7.1",
+          "resolved": "https://registry.npmjs.org/ms/-/ms-0.7.1.tgz"
         },
         "jade": {
           "version": "0.26.3",
