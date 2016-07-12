@@ -1,15 +1,16 @@
-FROM haproxy:1.5.11
+FROM nginx:1.11.1
 
 MAINTAINER Containership Developers <developers@containership.io>
 
 RUN echo "deb http://ftp.us.debian.org/debian wheezy-backports main" >> /etc/apt/sources.list
-RUN apt-get update && apt-get install curl nodejs-legacy rsyslog -y
+RUN apt-get update && apt-get install curl nodejs-legacy -y
 RUN curl -L --insecure https://www.npmjs.org/install.sh | bash
-RUN /usr/bin/npm install -g n && n 5.6.0
+RUN /usr/bin/npm install -g n && n 6.3.0
 
-RUN mkdir /containership-haproxy
-WORKDIR /containership-haproxy
-ADD . .
-RUN cp ./rsyslog/haproxy.conf /etc/rsyslog.d/haproxy.conf
+RUN rm -rf /etc/nginx/*
+RUN mkdir /etc/nginx/stream.d
+RUN mkdir /app
+ADD . /app
+WORKDIR /app
 RUN npm install
-CMD ./run.sh
+CMD node index.js
