@@ -17,5 +17,5 @@ nginx.write_config((err) => {
                 nginx.start();
             }
         });
-    }, process.env.RELOAD_INTERVAL || 15000);
+    }, process.env.NGINX_RELOAD_INTERVAL || 15000);
 });
