@@ -1,18 +1,18 @@
 'use strict';
 
 const myriad = require('./lib/myriad');
-const nginx = require('./lib/nginx');
+const nghttpx = require('./lib/nghttpx');
 
 const _ = require('lodash');
 const constants = require('containership.core.constants');
 const semver = require('semver');
 
-function start_nginx(callback) {
-    nginx.write_config((err) => {
+function start_nghttpx(callback) {
+    nghttpx.write_config((err) => {
         if (err) {
             process.stderr.write(`${err.message}\n`);
         } else {
-            nginx.start();
+            nghttpx.start();
         }
 
         if(callback) {
@@ -21,12 +21,12 @@ function start_nginx(callback) {
     });
 }
 
-start_nginx(() => {
+start_nghttpx(() => {
     myriad.get_containership_version((err, version) => {
         // embedded myriad-kv version does not include 'subscribe' functionality
         // fall back to reloading on an interval
         if(err || semver.lt(version, '1.8.0')) {
-            setInterval(start_nginx, process.env.NGINX_RELOAD_INTERVAL || 15000);
+            setInterval(start_nghttpx, process.env.NGHTTPX_RELOAD_INTERVAL || 15000);
         } else {
             const subscribers = {
                 applications: myriad.subscribe(process.env.CONTAINERSHIP_APPLICATIONS_REGEX || constants.myriad.APPLICATIONS),
@@ -48,7 +48,7 @@ start_nginx(() => {
                         if(!coalescing) {
                             setTimeout(() => {
                                 coalescing = false;
-                                start_nginx();
+                                start_nghttpx();
                             }, process.env.MYRIAD_SUBSCRIBE_COALESCING_INTERVAL || 1000);
 
                             coalescing = true;
