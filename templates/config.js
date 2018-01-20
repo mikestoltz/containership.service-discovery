@@ -9,19 +9,27 @@ module.exports = {
     render: function(options) {
         _.defaults(options, this.defaults);
 
+        const lb_ports = [];
+
         const config = _.map(options.applications, (application) => {
-            const application_config = [
-                `frontend=*,${application.env_vars.GRPCLB_PORT};no-tls`,
-            ];
+            const application_config = [];
+
+            lb_ports.push(application.env_vars.GRPCLB_PORT);
 
             _.forEach(application.containers, (container) => {
-                application_config.push(`backend=${container.ip},${container.port};;no-tls;proto=h2;fall=2;rise=2`);
+                application_config.push(`backend=${container.ip},${container.port};${application.id}.${process.env.CS_CLUSTER_ID}.containership;;no-tls;proto=h2;fall=2;rise=2`);
             });
 
-            application_config.push(`workers=${options.workers}\n`);
+            return application_config.join('\n');
+        });
 
-	    return application_config.join('\n');
-        })
+        _.forEach(_.uniq(lb_ports), (port) => {
+            config.unshift(`frontend=*,${port};no-tls`);
+        });
+
+        config.push('\nbackend=127.0.0.1,65535;;proto=h2;fall=2;rise=2');
+
+        config.push(`\nworkers=${options.workers}`);
 
         return _.flatten(config).join('\n');
     }
